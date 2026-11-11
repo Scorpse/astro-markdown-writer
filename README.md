@@ -2,12 +2,12 @@
 
 A small desktop app for publishing to a blog you own. It writes Markdown and images to your GitHub repository. [Astro Markdown Starter](https://github.com/Scorpse/astro-markdown-starter) builds the blog through GitHub Actions and serves it on GitHub Pages.
 
-[Download the Windows installer](https://github.com/Scorpse/astro-markdown-writer/releases/latest) · [Build on Linux](#linux) · [View the demo blog](https://scorpse.github.io/astro-markdown-writer-demo/)
+[Download the Windows installer](https://github.com/Scorpse/astro-markdown-writer/releases/latest) · [Download the Debian package](https://github.com/Scorpse/astro-markdown-writer/releases/download/v0.1.0/astro-markdown-writer_0.1.0_amd64.deb) · [Build on Linux](#linux) · [View the demo blog](https://scorpse.github.io/astro-markdown-writer-demo/)
 
 ## Start a blog
 
 1. [Fork the starter](https://github.com/Scorpse/astro-markdown-starter/fork) into your account. You can also use the template's **Use this template** button to create an independent copy. A public repository works with GitHub Free. GitHub's Pages eligibility applies to private repositories.
-2. Open Writer after installing it on Windows or building it on Linux. Paste your new blog repository URL and a GitHub personal access token. Select **Connect**. The app holds the token in memory until it closes. [Windows installer](https://github.com/Scorpse/astro-markdown-writer/releases/latest) · [Linux build](#linux) · [GitHub token guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+2. Install and open Writer. Paste your new blog repository URL and a GitHub personal access token. Select **Connect**. The app holds the token in memory until it closes. [Windows installer](https://github.com/Scorpse/astro-markdown-writer/releases/latest) · [Linux installation](#install-on-linux) · [GitHub token guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 3. Select **Set up and deploy site**. Writer enables Pages with GitHub Actions, enables the starter workflow if needed, and queues the first deployment when your token and repository settings allow it. Select **Deployment runs** to see the build and **Open site** to visit your blog.
 4. Write your first post and select **Publish post**. Writer adds the Markdown and referenced images in one commit on your default branch. A successful GitHub Actions run makes the post live. The app links to the commit and workflow run list.
 
@@ -23,6 +23,17 @@ You can use a publishing-only token and configure hosting in the browser. In you
 ## Writing
 
 The app keeps one working draft per connected repository on the device. It previews Markdown in the editor, and you can attach up to five PNG, JPEG, WebP, or GIF files with a combined size of 2 MiB. Add alt text in the Markdown. A post lives at `src/content/posts/<slug>/index.md` in your blog repo, alongside its images. To revise an existing published post, edit that file in GitHub. Writer v0.1 publishes new posts and protects existing slugs.
+
+## Install on Linux
+
+The amd64 package was tested on Debian 12 and Ubuntu 24.04. Download it,
+then run this command in the download directory. [Download the Debian package](https://github.com/Scorpse/astro-markdown-writer/releases/download/v0.1.0/astro-markdown-writer_0.1.0_amd64.deb)
+
+~~~sh
+sudo apt install ./astro-markdown-writer_0.1.0_amd64.deb
+~~~
+
+Open **Astro Markdown Writer** from your application menu.
 
 ## Build from source
 
