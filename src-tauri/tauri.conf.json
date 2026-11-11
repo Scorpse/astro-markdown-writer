@@ -1,0 +1,38 @@
+{
+  "productName": "Astro Markdown Writer",
+  "version": "0.1.0",
+  "identifier": "com.scorpse.astro-markdown-writer",
+  "build": {
+    "frontendDist": "../ui"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Astro Markdown Writer",
+        "width": 1120,
+        "height": 810,
+        "minWidth": 720,
+        "minHeight": 550
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser"
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Astro Markdown Writer</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header>
+  <strong>Astro Markdown Writer</strong>
+  <button type="button" id="template">Fork the starter ↗</button>
+</header>
+<main>
+  <section aria-labelledby="connect-title">
+    <h1 id="connect-title">Connect your blog</h1>
+    <form id="connect">
+      <label>GitHub repository <input id="repo" type="url" placeholder="https://github.com/you/your-blog" required></label>
+      <label>Personal access token <input id="token" type="password" autocomplete="off" spellcheck="false" required></label>
+      <p class="hint">Use a token with write access to this repository. It stays in memory for this session.</p>
+      <div class="actions"><button type="submit" class="primary">Connect</button><button type="button" id="token-guide">Token setup ↗</button></div>
+    </form>
+    <div id="site-controls" hidden>
+      <p id="connected"></p>
+      <div class="actions">
+        <button type="button" id="deploy">Set up and deploy site</button>
+        <button type="button" id="pages">Pages settings ↗</button>
+        <button type="button" id="runs">Deployment runs ↗</button>
+      </div>
+    </div>
+  </section>
+  <p id="status" role="status" aria-live="polite"></p>
+  <section aria-labelledby="draft-title">
+    <div class="heading"><h2 id="draft-title">Write a post</h2><button type="button" id="new">New draft</button></div>
+    <form id="post">
+      <div class="details">
+        <label>Title <input id="title" required maxlength="200"></label>
+        <label>URL slug <input id="slug" required pattern="[a-z0-9]+(-[a-z0-9]+)*"></label>
+        <label>Description <input id="description" required maxlength="400"></label>
+        <label>Publish date <input id="date" type="date" required></label>
+      </div>
+      <label>Tags <input id="tags" placeholder="astro, notes"></label>
+      <label for="body">Markdown</label>
+      <textarea id="body" rows="14" spellcheck="true" placeholder="Write your post here…" required></textarea>
+      <div class="actions">
+        <label class="upload">Insert images <input id="images" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple></label>
+        <button type="button" id="preview">Preview Markdown</button>
+        <button type="submit" id="publish" class="primary" disabled>Publish post</button>
+      </div>
+      <p id="draft-state" class="hint"></p>
+    </form>
+    <article id="preview-pane" hidden aria-label="Markdown preview"></article>
+  </section>
+</main>
+</body>
+</html>
